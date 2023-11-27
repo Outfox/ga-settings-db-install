@@ -1,6 +1,12 @@
 # -------------------------------------------------------------------
 # Setup of GA Settings DB
 # -------------------------------------------------------------------
+cat << EOF
+*******************************************************
+**** Welcome to the setup of Merkle GA Settings DB ****
+*******************************************************
+
+EOF
 
 read -p "Enter Google Cloud Project ID: " project_id
 if [ -z "$project_id" ]
@@ -68,7 +74,7 @@ gcloud scheduler jobs create http ga-settings-db \
 
 cat << EOF
 ********************************
-Setup completed!!
+Setup completed!
 
 Remember to grant the service account (${sa_name}@${project_id}.iam.gserviceaccount.com) read permissions in all your Google Analytics accounts.
 ********************************
