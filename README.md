@@ -19,3 +19,7 @@ Ensure that you have:
 3. Fill out info when asked (hit enter to use suggested default values)
 4. Note the Service Account email created at the end of the setup
 5. Assign the Service Account the 'Viewer' role in all Analytics accounts you like to monitor
+
+You can now wait until next day for the settings to be imported or you can manually trigger the import through Cloud Scheduler.
+
+## 

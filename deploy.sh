@@ -33,7 +33,8 @@ gcloud config set project $project_id
 # Activate GA Admin API:
 gcloud services enable \
     analyticsadmin.googleapis.com \
-    run.googleapis.com
+    run.googleapis.com \
+    cloudscheduler.googleapis.com
 
 # Create Service Account:
 gcloud iam service-accounts create $sa_name \
@@ -81,6 +82,18 @@ cat << EOF
 ********************************
 Setup completed!
 
-Remember to grant the service account (${sa_name}@${project_id}.iam.gserviceaccount.com) read permissions in all your Google Analytics accounts.
+Remember to grant the service account (${sa_name}@${project_id}.iam.gserviceaccount.com) the Viewer role in all your Google Analytics accounts.
+
+   __&__      
+  /     \     
+ |       |    
+ |  (o)(o)    
+ C   .---_)   
+  | |.___|    
+  |  \__/     
+  /_____\     
+ /_____/ \    
+/         \
+
 ********************************
 EOF
