@@ -43,13 +43,16 @@ gcloud iam service-accounts create $sa_name \
 # Assign roles to SA: 
 gcloud projects add-iam-policy-binding ${project_id} \
     --member=serviceAccount:${sa_name}@${project_id}.iam.gserviceaccount.com \
-    --role=roles/bigquery.admin
+    --role=roles/bigquery.admin \
+    --condition=None
 gcloud projects add-iam-policy-binding ${project_id} \
     --member=serviceAccount:${sa_name}@${project_id}.iam.gserviceaccount.com \
-    --role=roles/run.invoker
+    --role=roles/run.invoker \
+    --condition=None
 gcloud projects add-iam-policy-binding ${project_id} \
     --member=serviceAccount:${sa_name}@${project_id}.iam.gserviceaccount.com \
-    --role=roles/logging.logWriter
+    --role=roles/logging.logWriter \
+    --condition=None
 
 
 # Create Cloud Run Job:
