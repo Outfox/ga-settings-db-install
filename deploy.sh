@@ -31,7 +31,9 @@ sa_name=${sa_name:-ga-settings-db}
 gcloud config set project $project_id
 
 # Activate GA Admin API:
-gcloud services enable analyticsadmin.googleapis.com
+gcloud services enable \
+    analyticsadmin.googleapis.com \
+    run.googleapis.com
 
 # Create Service Account:
 gcloud iam service-accounts create $sa_name \
