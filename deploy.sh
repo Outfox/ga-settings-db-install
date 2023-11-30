@@ -34,7 +34,9 @@ gcloud config set project $project_id
 gcloud services enable \
     analyticsadmin.googleapis.com \
     run.googleapis.com \
-    cloudscheduler.googleapis.com
+    cloudscheduler.googleapis.com \
+    bigquery.googleapis.com
+
 
 # Create Service Account:
 gcloud iam service-accounts create $sa_name \
