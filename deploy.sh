@@ -33,6 +33,7 @@ gcloud config set project $project_id
 # Activate GA Admin API:
 gcloud services enable \
     analyticsadmin.googleapis.com \
+    analyticsdata.googleapis.com \
     run.googleapis.com \
     cloudscheduler.googleapis.com \
     bigquery.googleapis.com
@@ -68,7 +69,8 @@ gcloud run jobs create ga-settings-db \
     --service-account=${sa_name}@${project_id}.iam.gserviceaccount.com \
     --set-env-vars="PROJECT_ID=${project_id}" \
     --set-env-vars="BQ_DATASET=${dataset}" \
-    --set-env-vars="BQ_REGION=${bq_region}" 
+    --set-env-vars="BQ_REGION=${bq_region}" \
+    --set-env-vars="LOAD_METRICS=true" 
 
 
 # Schedule job:
